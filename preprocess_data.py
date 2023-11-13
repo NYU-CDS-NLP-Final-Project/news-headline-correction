@@ -21,15 +21,15 @@ mapping = {'agree': 1, 'discuss': 1, 'disagree': 0, 'unrelated': 0}
 train_stances['Stance'] = train_stances['Stance'].replace(mapping)
 test_stances['Stance'] = test_stances['Stance'].replace(mapping)
 
-#Tokenize Text 
-train_bodies['articleBody'] = train_bodies['articleBody'].progress_apply(tokenize_data)
-test_bodies['articleBody'] = test_bodies['articleBody'].progress_apply(tokenize_data)
-train_stances['Headline'] = train_stances['Headline'].progress_apply(tokenize_data)
-test_stances['Headline'] = test_stances['Headline'].progress_apply(tokenize_data)
+# #Tokenize Text 
+# train_bodies['articleBody'] = train_bodies['articleBody'].progress_apply(tokenize_data)
+# test_bodies['articleBody'] = test_bodies['articleBody'].progress_apply(tokenize_data)
+# train_stances['Headline'] = train_stances['Headline'].progress_apply(tokenize_data)
+# test_stances['Headline'] = test_stances['Headline'].progress_apply(tokenize_data)
 
 
 #Write to csv (update file paths)
-train_bodies.to_csv('/Users/allisonredfern/Documents/news-headline-correction/train_bodies_preprocessed.csv')
-train_stances.to_csv('/Users/allisonredfern/Documents/news-headline-correction/train_stances_preprocessed.csv')
-test_bodies.to_csv('/Users/allisonredfern/Documents/news-headline-correction/test_bodies_preprocessed.csv')
-test_stances.to_csv('/Users/allisonredfern/Documents/news-headline-correction/test_stances_preprocessed.csv')
+train_bodies.to_csv('/Users/allisonredfern/Documents/news-headline-correction/train_bodies_preprocessed_nontokenized.csv')
+train_stances.to_csv('/Users/allisonredfern/Documents/news-headline-correction/train_stances_preprocessed_nontokenized.csv')
+test_bodies.to_csv('/Users/allisonredfern/Documents/news-headline-correction/test_bodies_preprocessed_nontokenized.csv')
+test_stances.to_csv('/Users/allisonredfern/Documents/news-headline-correction/test_stances_preprocessed_nontokenized.csv')
