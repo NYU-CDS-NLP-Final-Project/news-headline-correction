@@ -4,7 +4,7 @@
 #SBATCH --cpus-per-task=2
 #SBATCH --time=02:00:00
 #SBATCH --mem=64GB
-#SBATCH --gres=gpu:1
+#SBATCH --gres=gpu:rtx8000:1
 #SBATCH --job-name=T5Base
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --mail-user=mcn8851@nyu.edu
@@ -20,8 +20,3 @@ singularity exec $nv \
   /bin/bash -c "source /ext3/env.sh; python t5_base_headlines.py"
 
 
-
-# Add these lines at the end of your Slurm script
-if [ -e t5_headline_$SLURM_JOB_ID.out ]; then
-    mail -s "T5 Base Job $SLURM_JOB_ID - Output" mcn8851@nyu.edu < t5_headline_$SLURM_JOB_ID.out
-fi
