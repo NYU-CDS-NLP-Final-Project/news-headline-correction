@@ -7,7 +7,7 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
 def summarize_article_pegasus(text): 
     try: 
-        tokens_input = tokenizer.encode("summarize: "+ text, return_tensors='pt', max_length=1024, truncation=True)
+        tokens_input = tokenizer.encode("summarize: "+ text, return_tensors='pt', max_length=512, truncation=True)
         ids = model.generate(tokens_input, min_length=80, max_length=100)
         summary = tokenizer.decode(ids[0], skip_special_tokens=True)
         # print(f'summary: {summary}')
@@ -24,8 +24,8 @@ train_bodies = pd.read_csv('/scratch/mcs9834/llm_env/news-headline-correction/tr
 test_bodies = pd.read_csv('/scratch/mcs9834/llm_env/news-headline-correction/test_bodies_preprocessed_nontokenized.csv')
 
 # Apply PEGASUS summaries to all train and test data
-model = AutoModelForSeq2SeqLM.from_pretrained('google/pegasus-large')
-tokenizer = AutoTokenizer.from_pretrained('google/pegasus-large', use_fast=False)
+model = AutoModelForSeq2SeqLM.from_pretrained('google/pegasus-xsum')
+tokenizer = AutoTokenizer.from_pretrained('google/pegasus-xsum') #, use_fast=False)
 
 train_bodies_pegasus = train_bodies.copy()
 test_bodies_pegasus = test_bodies.copy()
@@ -37,5 +37,5 @@ test_bodies_pegasus['articleBody'] = test_bodies_pegasus['articleBody'].apply(su
 
 print('summary completed, writing to csv')
 
-train_bodies_pegasus.to_csv('/scratch/mcs9834/llm_env/news-headline-correction/train_bodies_summarized_max100tok_large_pegasus.csv')
-test_bodies_pegasus.to_csv('/scratch/mcs9834/llm_env/news-headline-correction/test_bodies_summarized_max100tok_large_pegasus.csv')
+train_bodies_pegasus.to_csv('/scratch/mcs9834/llm_env/news-headline-correction/train_bodies_summarized_max100tok_pegasus.csv')
+test_bodies_pegasus.to_csv('/scratch/mcs9834/llm_env/news-headline-correction/test_bodies_summarized_max100tok_pegasus.csv')
