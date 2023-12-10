@@ -75,7 +75,7 @@ def generate_headline(article_body):
 # Input paths (Update)
 input_path_1 = '/scratch/mcn8851/news-headline-correction/test_bodies_preprocessed_nontokenized.csv'
 
-input_path_2 = '/scratch/mcn8851/news-headline-correction/test_bodies_summarized_pegasus_loop.csv'
+input_path_2 = '/scratch/mcn8851/news-headline-correction/test_bodies_summarized_200tok_pegasus.csv'
 input_path_3 = '/scratch/mcn8851/news-headline-correction/test_bodies_summarized_max100tok_pegasus.csv'
 
 input_path_4 = '/scratch/mcn8851/news-headline-correction/test_bodies_summarized_t5'
@@ -84,7 +84,7 @@ input_path_5 = '/scratch/mcn8851/news-headline-correction/test_bodies_summarized
 # Output paths (Update)
 output_path_1 = '/scratch/mcn8851/LLM_env/nlp/llama2_headlines/test_bodies_llama_headlines.csv'
 
-output_path_2 = '/scratch/mcn8851/LLM_env/nlp/llama2_headlines/test_bodies_summarized_pegasus_loop_llama_headlines.csv'
+output_path_2 = '/scratch/mcn8851/LLM_env/nlp/llama2_headlines/test_bodies_summarized_200tok_pegasus_llama_headlines.csv'
 output_path_3 = '/scratch/mcn8851/LLM_env/nlp/llama2_headlines/test_bodies_summarized_max100tok_pegasus_llama_headlines.csv'
 
 output_path_4 = '/scratch/mcn8851/LLM_env/nlp/llama2_headlines/test_bodies_summarized_t5_llama_headlines.csv'

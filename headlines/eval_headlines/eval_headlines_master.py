@@ -20,12 +20,12 @@ train_stances = pd.read_csv('/scratch/mcn8851/news-headline-correction/train_sta
 # Input Paths
 input_paths = [
     '/scratch/mcn8851/LLM_env/nlp/llama2_headlines/test_bodies_llama_headlines.csv',
-    '/scratch/mcn8851/LLM_env/nlp/llama2_headlines/test_bodies_summarized_pegasus_loop_llama_headlines.csv',
+    '/scratch/mcn8851/LLM_env/nlp/llama2_headlines/test_bodies_summarized_200tok_pegasus_llama_headlines.csv',
     '/scratch/mcn8851/LLM_env/nlp/llama2_headlines/test_bodies_summarized_max100tok_pegasus_llama_headlines.csv',
     '/scratch/mcn8851/LLM_env/nlp/llama2_headlines/test_bodies_summarized_t5_llama_headlines.csv',
     '/scratch/mcn8851/LLM_env/nlp/llama2_headlines/test_bodies_summarized_max_100tok_t5_llama_headlines.csv',
     '/scratch/mcn8851/LLM_env/nlp/t5_headlines/test_bodies_t5_headlines.csv',
-    '/scratch/mcn8851/LLM_env/nlp/t5_headlines/test_bodies_summarized_pegasus_loop_t5_headlines.csv',
+    '/scratch/mcn8851/LLM_env/nlp/t5_headlines/test_bodies_summarized_200tok_pegasus_t5_headlines.csv',
     '/scratch/mcn8851/LLM_env/nlp/t5_headlines/test_bodies_summarized_max100tok_pegasus_t5_headlines.csv',
     '/scratch/mcn8851/LLM_env/nlp/t5_headlines/test_bodies_summarized_t5_t5_headlines.csv',
     '/scratch/mcn8851/LLM_env/nlp/t5_headlines/test_bodies_summarized_max_100tok_t5_t5_headlines.csv'
@@ -66,6 +66,6 @@ merged_df = reduce(lambda left, right: pd.merge(left, right, on='Body ID', how='
 merged_df = merged_df.reset_index(drop=True)
 headline_df = test_body.merge(merged_df, how='inner', on='Body ID').reset_index(drop=True)
 
-headline_df.to_csv('/scratch/mcn8851/LLM_env/nlp/eval_headlines_master.csv', index=False)
+headline_df.to_csv('/scratch/mcn8851/LLM_env/nlp/eval_headlines/eval_headlines_master.csv', index=False)
 
 print(f">> Results dumped to nlp folder!")
