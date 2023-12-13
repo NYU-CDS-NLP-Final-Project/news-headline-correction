@@ -8,8 +8,8 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 def summarize_article_t5(text): 
 
     try: 
-        tokens_input = tokenizer.encode("summarize: "+text, return_tensors='pt', max_length=512, truncation=True)
-        summary_ids = model.generate(tokens_input, min_length=80, max_length=120)
+        tokens_input = tokenizer.encode("summarize: "+text, return_tensors='pt', max_length=1024, truncation=True)
+        summary_ids = model.generate(tokens_input, min_length=80, max_length=100)
         summary = tokenizer.decode(summary_ids[0], skip_special_tokens=True)
         # print(summary)
         return summary
@@ -38,6 +38,6 @@ test_bodies_pegasus['articleBody'] = test_bodies_pegasus['articleBody'].apply(su
 
 print('summary finished')
 
-train_bodies_pegasus.to_csv('/scratch/mcs9834/llm_env/news-headline-correction/train_bodies_summarized_t5')
-test_bodies_pegasus.to_csv('/scratch/mcs9834/llm_env/news-headline-correction/test_bodies_summarized_t5')
+train_bodies_pegasus.to_csv('/scratch/mcs9834/llm_env/news-headline-correction/train_bodies_summarized_max100tok_t5.csv')
+test_bodies_pegasus.to_csv('/scratch/mcs9834/llm_env/news-headline-correction/test_bodies_summarized_max_100tok_t5.csv')
 
