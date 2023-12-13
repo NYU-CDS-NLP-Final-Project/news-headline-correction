@@ -1,5 +1,0 @@
-Best Hyperparameters:
-max_depth: 10
-n_estimators: 200
-
-Best F1 Score: 0.9167
