@@ -15,4 +15,6 @@ relevance, readability, and style.
 ## Details:
 
 ### Data:
+Sourced from the Fake News Challenge (FNC) - http://www.fakenewschallenge.org/
+
 fnc-1-master - original FNC github repo
