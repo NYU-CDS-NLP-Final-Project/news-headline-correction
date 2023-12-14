@@ -1,8 +1,7 @@
 # news-headline-correction
 
 ### Abstract:
-This project addresses the issue of inaccurate headlines in news media by devel-
-oping a model to classify headline-article alignment and suggest improvements
+This project addresses the issue of inaccurate headlines in news media by developing a model to classify headline-article alignment and suggest improvements
 for misaligned cases. The focus is on combating misinformation, particularly in
 topics like politics, crime, and clickbait articles. The study employs a nuanced
 approach to model construction and scoring, emphasizing the F1 score to handle
