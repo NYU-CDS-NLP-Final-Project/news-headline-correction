@@ -1,14 +1,13 @@
 #!/bin/bash
-#SBATCH --nodes=4
+#SBATCH --nodes=2
 #SBATCH --ntasks-per-node=4
 #SBATCH --cpus-per-task=4
-#SBATCH --time=6:00:00
-#SBATCH --mem=128GB
-#SBATCH --gres=gpu
+#SBATCH --time=22:00:00
+#SBATCH --mem=32GB
 #SBATCH --job-name=pegasus_summary
 #SBATCH --mail-type=BEGIN,END,FAIL
 #SBATCH --mail-user=mcs9834@nyu.edu
-#SBATCH --output=/scratch/mcs9834/llm_env/news-headline-correction/summaries/pegasus_summary_max100tok.out
+#SBATCH --output=/scratch/mcs9834/llm_env/news-headline-correction/summaries/pegasus_summary_200tok_fixed.out
 
 module purge
 
