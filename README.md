@@ -1,4 +1,4 @@
-# news-headline-correction
+# Classification and Correction of Non-Representative News Headlines
 
 ## Abstract:
 This project addresses the issue of inaccurate headlines in news media by developing a model to classify headline-article alignment and suggest improvements
