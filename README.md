@@ -1,6 +1,6 @@
 # news-headline-correction
 
-### Abstract:
+## Abstract:
 This project addresses the issue of inaccurate headlines in news media by developing a model to classify headline-article alignment and suggest improvements
 for misaligned cases. The focus is on combating misinformation, particularly in
 topics like politics, crime, and clickbait articles. The study employs a nuanced
@@ -12,5 +12,7 @@ non-summarized text consistently outperforming in various scenarios. Evaluation
 of the headline generation models favors T5 for its well-rounded performance in
 relevance, readability, and style.
 
-### Details:
+## Details:
+
+### Data:
 fnc-1-master - original FNC github repo
